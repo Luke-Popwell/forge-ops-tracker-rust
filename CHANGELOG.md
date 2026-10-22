@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.17.1 (2026-10-22)
+
+- The README says what strict privacy does in its opening lines.
+- The source is public at https://github.com/Luke-Popwell/forge-ops-tracker-rust, and the package links to it.
+
 ## 0.17.0 (2026-10-20)
 
 - **Strict privacy: raw paths keep only their first segment.** With `strict_privacy` on, a span name or performance sample's transaction name that is a raw path (one with no route parameter such as `:id` or `{id}`) used to keep every segment without a digit, so `/patients/jane-doe` went out as written. It is now cut to its first segment, then `/:path` if there was more: `GET /patients/jane-doe/12` is sent as `GET /patients/:path`. A route template (`GET /patients/:id/notes`) is sent as it is, so naming traces and transactions by route loses nothing. With strict privacy off, nothing changes.
