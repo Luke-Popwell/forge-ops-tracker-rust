@@ -1,0 +1,23 @@
+[package]
+name = "forge-ops-tracker"
+version = "0.17.0"
+edition = "2021"
+rust-version = "1.81"
+description = "Rust error reporting client for ForgeOps."
+license = "MIT"
+readme = "README.md"
+homepage = "https://getforgeops.net"
+# The public read-only mirror of this directory (see script/release_sdks_lib/mirror.rb).
+repository = "https://github.com/Luke-Popwell/forge-ops-tracker-rust"
+keywords = [ "error-reporting", "logging", "monitoring", "observability" ]
+categories = [ "development-tools::debugging" ]
+
+# Rust's standard library, unlike Python's/Go's/Java's, has no HTTP client, no structured
+# per-frame backtrace access on stable, and no regular expression engine: three things every
+# other client in this repo either gets from its own language's standard library or (for Go's
+# optional Gin integration only) adds as a clearly-scoped extra. See README.md's "Dependencies"
+# section for why each of these three specifically is here, not a convenience grab-bag.
+[dependencies]
+ureq = { version = "2", default-features = false, features = ["tls"] }
+backtrace = "0.3"
+regex = "1"

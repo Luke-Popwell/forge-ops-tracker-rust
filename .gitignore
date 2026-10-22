@@ -1,0 +1,6 @@
+/target/
+# This is a library crate, not a binary: Cargo.lock is deliberately not committed (the standard
+# convention for libraries: a consuming binary resolves its own dependency versions; committing
+# ours here would only pin them for this crate's own `cargo test`/`cargo build` runs, which is
+# what CI regenerating it from Cargo.toml on every run already covers just as well).
+/Cargo.lock
