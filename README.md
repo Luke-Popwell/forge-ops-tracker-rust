@@ -11,7 +11,7 @@ raised them.
 
 ```toml
 [dependencies]
-forge-ops-tracker = "0.18.0"
+forge-ops-tracker = "0.19.0"
 ```
 
 ### Dependencies
